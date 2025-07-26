@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreachShield - Password Safety Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🔐 BreachShield</h1>
+    <nav>
+      <button onclick="showSection('checker')">Password Strength Checker 🔐</button>
+      <button onclick="showSection('notify')">Notify Me 📬</button>
+      <select onchange="showAboutSection(this.value)">
+        <option disabled selected>About 📘</option>
+        <option value="faqs">FAQs</option>
+        <option value="terms">Terms of Use</option>
+        <option value="privacy">Privacy Policy</option>
+      </select>
+    </nav>
+  </header>
+
+  <main>
+    <section id="checker" class="content">
+      <p>Enter your password below to check strength, breaches & simulate dark web scan.</p>
+      <input type="password" id="password" placeholder="Enter your password..." />
+      <button onclick="analyzePassword()">Check</button>
+      <div id="result"></div>
+      <div class="bar"><div id="barFill" class="fill"></div></div>
+      <div id="tips"></div>
+      <div id="darkweb"></div>
+      <div id="suggestions">
+        <h3>💡 Strong Password Suggestions</h3>
+        <ul>
+          <li>#Eagle$2025Sky@</li>
+          <li>Pine@Tree88!</li>
+          <li>Moonlight_#Dancer7</li>
+          <li>9!SecureCloud*Net</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="notify" class="content" style="display: none;">
+      <h2>🔔 Get Breach Notifications</h2>
+      <input type="email" id="emailNotify" placeholder="Enter your email..." />
+      <button onclick="subscribeEmail()">Subscribe</button>
+      <p>We’ll send you an alert if your email is found in future data breaches.</p>
+      <div id="notifyStatus"></div>
+    </section>
+
+    <section id="about" class="content" style="display: none;">
+      <div id="faqs" class="about-sub" style="display:none;"></div>
+      <div id="terms" class="about-sub" style="display:none;"></div>
+      <div id="privacy" class="about-sub" style="display:none;"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
